@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12"> 
+            <h2 class="text-center">Contact card</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th>Email</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for user in users %}    
+                    <tr>
+                        <th>{{user.id}}</th>
+                        <th>{{user.user.first_name}} {{reg.last_name}}</th>
+                        <th>{{user.dob}}</th>
+                        <th>{{user.user.email}}</th>
+                        <th>{{user.image}}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+        </div>
+
+{% endblock %}
